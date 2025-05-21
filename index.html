@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Practice</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/accessibility.css" />
+    <link rel="stylesheet" href="css/editor.css" />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body class="theme-default">
+    <div class="app-container">
+      <header>
+        <span id="back-button" class="back-button"
+          ><i class="fas fa-arrow-left"></i
+        ></span>
+        <h1>Code Practice</h1>
+        <span id="settings-button" class="settings-button"
+          ><i class="fas fa-cog"></i
+        ></span>
+      </header>
+
+      <main>
+        <!-- Dashboard Screen -->
+        <div id="dashboard" class="dashboard">
+          <div class="welcome-message">
+            <h2>Welcome back, Henry!</h2>
+            <p>Continue your coding journey today.</p>
+          </div>
+
+          <div class="connection-status online">
+            <i class="fas fa-wifi"></i> <span>Online Mode</span>
+          </div>
+
+          <div class="streak-container">
+            <div class="streak-counter">
+              <h3>Current Streak</h3>
+              <span class="count">3 days</span>
+            </div>
+            <div class="streak-calendar">
+              <div class="day completed">M</div>
+              <div class="day completed">T</div>
+              <div class="day completed">W</div>
+              <div class="day">T</div>
+              <div class="day">F</div>
+              <div class="day">S</div>
+              <div class="day">S</div>
+            </div>
+          </div>
+
+          <div class="daily-challenge">
+            <div class="challenge-header">
+              <h3>Daily Challenge</h3>
+              <span class="job-skill-tag">Frontend</span>
+            </div>
+            <p>Create a responsive navigation menu</p>
+            <div class="challenge-footer">
+              <span class="time-estimate"
+                ><i class="far fa-clock"></i> 15 min</span
+              >
+              <button class="start-button">Start Now</button>
+            </div>
+          </div>
+
+          <div class="learning-path">
+            <h3>Your Learning Path</h3>
+            <div class="path-progress">
+              <div class="path-bar">
+                <div class="path-completed" style="width: 45%"></div>
+              </div>
+              <span class="path-percentage">45% Complete</span>
+            </div>
+            <div class="next-lessons">
+              <div class="next-lesson">
+                <div class="lesson-icon"><i class="fas fa-list"></i></div>
+                <div class="lesson-info">
+                  <h4>Working with Lists</h4>
+                  <p>Suggested next step</p>
+                </div>
+                <div class="lesson-action">
+                  <i class="fas fa-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="category-list">
+            <h3>Practice Categories</h3>
+
+            <div class="category" data-category="html">
+              <div class="category-icon">H</div>
+              <div class="category-info">
+                <h4>HTML Basics</h4>
+                <p>Structure web content</p>
+                <div class="job-skills">
+                  <span class="job-skill-tag">Entry-level Frontend</span>
+                </div>
+              </div>
+              <div class="category-progress">70%</div>
+            </div>
+
+            <div class="category" data-category="css">
+              <div class="category-icon">C</div>
+              <div class="category-info">
+                <h4>CSS Styling</h4>
+                <p>Design and layout</p>
+                <div class="job-skills">
+                  <span class="job-skill-tag">UI Developer</span>
+                </div>
+              </div>
+              <div class="category-progress">45%</div>
+            </div>
+
+            <div class="category" data-category="js">
+              <div class="category-icon">J</div>
+              <div class="category-info">
+                <h4>JavaScript</h4>
+                <p>Interactive functionality</p>
+                <div class="job-skills">
+                  <span class="job-skill-tag">Frontend Developer</span>
+                </div>
+              </div>
+              <div class="category-progress">30%</div>
+            </div>
+
+            <div class="category" data-category="interview">
+              <div class="category-icon">I</div>
+              <div class="category-info">
+                <h4>Interview Prep</h4>
+                <p>Common technical challenges</p>
+                <div class="job-skills">
+                  <span class="job-skill-tag">Job Readiness</span>
+                </div>
+              </div>
+              <div class="category-progress">15%</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exercise List Screen -->
+        <div id="exercise-list" class="exercise-list">
+          <div class="category-header">
+            <h2>HTML Basics</h2>
+            <p>Master the fundamentals of HTML structure</p>
+
+            <div class="job-alignment">
+              <h4>Job Skill Alignment</h4>
+              <div class="job-skills">
+                <span class="job-skill-tag">Entry-level Frontend</span>
+                <span class="job-skill-tag">Web Developer</span>
+              </div>
+            </div>
+
+            <div class="category-filters">
+              <span class="filter active">All</span>
+              <span class="filter">Not Started</span>
+              <span class="filter">In Progress</span>
+              <span class="filter">Completed</span>
+            </div>
+          </div>
+
+          <div class="exercise-item-list">
+            <div class="exercise completed">
+              <div class="exercise-status"></div>
+              <div class="exercise-info">
+                <h4>HTML Document Structure</h4>
+                <p>Create the basic structure of an HTML page</p>
+                <div class="exercise-meta">
+                  <span class="time-estimate"
+                    ><i class="far fa-clock"></i> 10 min</span
+                  >
+                  <span class="completion-date">Completed 2 days ago</span>
+                </div>
+              </div>
+              <div class="exercise-difficulty">Beginner</div>
+            </div>
+
+            <div class="exercise completed">
+              <div class="exercise-status"></div>
+              <div class="exercise-info">
+                <h4>Headings and Paragraphs</h4>
+                <p>Format text content properly</p>
+                <div class="exercise-meta">
+                  <span class="time-estimate"
+                    ><i class="far fa-clock"></i> 8 min</span
+                  >
+                  <span class="completion-date">Completed 1 day ago</span>
+                </div>
+              </div>
+              <div class="exercise-difficulty">Beginner</div>
+            </div>
+
+            <div class="exercise">
+              <div class="exercise-status"></div>
+              <div class="exercise-info">
+                <h4>Working with Lists</h4>
+                <p>Create ordered and unordered lists</p>
+                <div class="exercise-meta">
+                  <span class="time-estimate"
+                    ><i class="far fa-clock"></i> 12 min</span
+                  >
+                  <span class="download-status downloaded"
+                    ><i class="fas fa-download"></i> Available offline</span
+                  >
+                </div>
+              </div>
+              <div class="exercise-difficulty">Beginner</div>
+            </div>
+
+            <div class="exercise locked">
+              <div class="exercise-status"></div>
+              <div class="exercise-info">
+                <h4>Adding Links</h4>
+                <p>Create hyperlinks to other pages</p>
+                <div class="exercise-meta">
+                  <span class="time-estimate"
+                    ><i class="far fa-clock"></i> 15 min</span
+                  >
+                  <span class="prerequisite"
+                    >Complete "Working with Lists" first</span
+                  >
+                </div>
+              </div>
+              <div class="exercise-difficulty">Intermediate</div>
+            </div>
+
+            <div class="exercise locked">
+              <div class="exercise-status"></div>
+              <div class="exercise-info">
+                <h4>Image Elements</h4>
+                <p>Add and configure images</p>
+                <div class="exercise-meta">
+                  <span class="time-estimate"
+                    ><i class="far fa-clock"></i> 18 min</span
+                  >
+                  <span class="prerequisite"
+                    >Complete "Adding Links" first</span
+                  >
+                </div>
+              </div>
+              <div class="exercise-difficulty">Intermediate</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Code Editor Screen -->
+        <div id="code-editor" class="code-editor">
+          <div class="exercise-instructions">
+            <h3>Working with Lists</h3>
+            <p>
+              Create an unordered list with at least 3 items, then create an
+              ordered list with at least 3 items.
+            </p>
+
+            <div class="job-hint">
+              <i class="fas fa-briefcase"></i> This skill appears in 78% of
+              entry-level frontend job postings.
+            </div>
+
+            <div class="instructions-expander">
+              <span id="toggle-instructions">Show detailed instructions</span>
+            </div>
+
+            <div id="detailed-instructions" class="detailed-instructions">
+              <h4>HTML Lists</h4>
+              <p>HTML provides two main types of lists:</p>
+              <ul>
+                <li>
+                  <strong>Unordered lists</strong> use the
+                  <code>&lt;ul&gt;</code> tag and display items with bullet
+                  points
+                </li>
+                <li>
+                  <strong>Ordered lists</strong> use the
+                  <code>&lt;ol&gt;</code> tag and display items with numbers
+                </li>
+              </ul>
+              <p>
+                Each item within either type of list must be wrapped in
+                <code>&lt;li&gt;</code> (list item) tags.
+              </p>
+
+              <h4>Example</h4>
+              <pre>
+&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+                        </pre
+              >
+            </div>
+          </div>
+
+          <div class="editor-container">
+            <div class="editor-header">
+              <div class="editor-tabs">
+                <span class="active">HTML</span>
+                <span>CSS</span>
+                <span>Result</span>
+              </div>
+              <div class="editor-actions">
+                <span id="reset-code">Reset</span>
+                <span id="toggle-help"
+                  ><i class="far fa-question-circle"></i
+                ></span>
+              </div>
+            </div>
+            <div class="code-area" id="html-editor" contenteditable="true">
+              <span class="highlight-tag">&lt;!DOCTYPE html&gt;</span>
+              <span class="highlight-tag">&lt;html&gt;</span>
+              <span class="highlight-tag">&lt;head&gt;</span>
+              <span class="highlight-tag">&lt;title&gt;</span>Working with
+              Lists<span class="highlight-tag">&lt;/title&gt;</span>
+              <span class="highlight-tag">&lt;/head&gt;</span>
+              <span class="highlight-tag">&lt;body&gt;</span>
+              <span class="highlight-tag">&lt;h1&gt;</span>List Practice<span
+                class="highlight-tag"
+                >&lt;/h1&gt;</span
+              >
+
+              <span class="highlight-html">/* Your code here */</span>
+
+              <span class="highlight-tag">&lt;/body&gt;</span>
+              <span class="highlight-tag">&lt;/html&gt;</span>
+            </div>
+
+            <div
+              class="code-area"
+              id="css-editor"
+              style="display: none"
+              contenteditable="true"
+            >
+              <span class="highlight-css">/* Add your CSS styles here */</span>
+              body { font-family: Arial, sans-serif; line-height: 1.6; padding:
+              20px; } h1 { color: #333; }
+            </div>
+
+            <div class="preview-area" id="result-preview" style="display: none">
+              <div class="preview-content">
+                <h1>List Practice</h1>
+                <!-- Preview content will be generated by JavaScript -->
+              </div>
+            </div>
+
+            <div class="code-hints">
+              <div class="hint">
+                <i class="fas fa-lightbulb"></i> Tip: Use
+                <code>&lt;ul&gt;</code> for unordered lists and
+                <code>&lt;li&gt;</code> for list items.
+              </div>
+            </div>
+
+            <div class="error-display" id="code-errors">
+              <!-- Error messages will appear here -->
+            </div>
+          </div>
+
+          <div class="console-container">
+            <div class="console-header">
+              <h4>Console</h4>
+              <span id="clear-console">Clear</span>
+            </div>
+            <div class="console-output" id="console-output">
+              <!-- Console output will appear here -->
+            </div>
+          </div>
+
+          <div class="editor-footer">
+            <button class="save-button">
+              <i class="far fa-save"></i> Save Progress
+            </button>
+            <button class="run-button">Run Code</button>
+          </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results" class="results">
+          <div class="results-header">
+            <h2>Results</h2>
+            <div class="results-score">85%</div>
+          </div>
+
+          <div class="output-container">
+            <div class="output-header">
+              <h3>Output</h3>
+              <div class="output-actions">
+                <span id="toggle-expected">Show Expected</span>
+              </div>
+            </div>
+            <div class="output-content">
+              <h1>List Practice</h1>
+              <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ul>
+              <ol>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+              </ol>
+            </div>
+
+            <div class="expected-output" style="display: none">
+              <h4>Expected Output:</h4>
+              <div class="expected-content">
+                <h1>List Practice</h1>
+                <ul>
+                  <li>Item 1</li>
+                  <li>Item 2</li>
+                  <li>Item 3</li>
+                </ul>
+                <ol>
+                  <li>First item</li>
+                  <li>Second item</li>
+                  <li>Third item</li>
+                </ol>
+              </div>
+              <div class="diff-highlight">
+                <!-- Differences would be highlighted here -->
+              </div>
+            </div>
+          </div>
+
+          <div class="feedback-container">
+            <h3 class="feedback-title">Feedback</h3>
+            <div class="feedback-item positive">
+              <div class="feedback-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="feedback-text">
+                You correctly created an unordered list with the &lt;ul&gt; tag.
+              </div>
+            </div>
+            <div class="feedback-item positive">
+              <div class="feedback-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="feedback-text">
+                You correctly created an ordered list with the &lt;ol&gt; tag.
+              </div>
+            </div>
+            <div class="feedback-item positive">
+              <div class="feedback-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="feedback-text">
+                Each list has at least 3 items as required.
+              </div>
+            </div>
+            <div class="feedback-item improvement">
+              <div class="feedback-icon">
+                <i class="fas fa-info-circle"></i>
+              </div>
+              <div class="feedback-text">
+                Consider adding descriptive class names to your lists for better
+                CSS styling options.
+              </div>
+            </div>
+          </div>
+
+          <div class="job-skill-container">
+            <h3>Job Skill Progress</h3>
+            <div class="job-skill">
+              <div class="job-skill-name">HTML Structure</div>
+              <div class="job-skill-bar">
+                <div class="job-skill-progress" style="width: 75%"></div>
+              </div>
+              <div class="job-skill-percentage">75%</div>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button class="retry-button">
+              <i class="fas fa-redo"></i> Try Again
+            </button>
+            <button class="next-button">
+              Next Exercise <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <div class="social-share">
+            <h3>Share Your Progress</h3>
+            <p>You've completed 3 HTML exercises this week!</p>
+            <div class="share-buttons">
+              <button class="share-button">
+                <i class="fas fa-share-alt"></i> Share
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Settings Screen -->
+        <div id="settings-screen" class="settings-screen">
+          <h2>Settings</h2>
+
+          <div class="settings-section">
+            <h3>Accessibility</h3>
+            <div class="setting-item">
+              <label for="font-size">Text Size</label>
+              <div class="setting-control">
+                <button class="size-decrease">
+                  <i class="fas fa-minus"></i>
+                </button>
+                <span class="current-size">Medium</span>
+                <button class="size-increase">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="setting-item">
+              <label for="high-contrast">High Contrast Mode</label>
+              <div class="toggle-switch">
+                <input type="checkbox" id="high-contrast" />
+                <label for="high-contrast" class="toggle-label"></label>
+              </div>
+            </div>
+
+            <div class="setting-item">
+              <label for="screen-reader">Screen Reader Support</label>
+              <div class="toggle-switch">
+                <input type="checkbox" id="screen-reader" checked />
+                <label for="screen-reader" class="toggle-label"></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="settings-section">
+            <h3>Offline Learning</h3>
+            <div class="setting-item">
+              <label for="offline-mode">Download Content for Offline Use</label>
+              <div class="toggle-switch">
+                <input type="checkbox" id="offline-mode" checked />
+                <label for="offline-mode" class="toggle-label"></label>
+              </div>
+            </div>
+
+            <div class="offline-storage">
+              <div class="storage-info">
+                <div class="storage-used">48 MB used</div>
+                <div class="storage-total">500 MB available</div>
+              </div>
+              <div class="storage-bar">
+                <div class="storage-filled" style="width: 10%"></div>
+              </div>
+            </div>
+
+            <button class="manage-downloads">Manage Downloaded Content</button>
+          </div>
+
+          <div class="settings-section">
+            <h3>Code Editor</h3>
+            <div class="setting-item">
+              <label for="syntax-highlight">Syntax Highlighting</label>
+              <div class="toggle-switch">
+                <input type="checkbox" id="syntax-highlight" checked />
+                <label for="syntax-highlight" class="toggle-label"></label>
+              </div>
+            </div>
+
+            <div class="setting-item">
+              <label for="auto-complete">Code Autocompletion</label>
+              <div class="toggle-switch">
+                <input type="checkbox" id="auto-complete" checked />
+                <label for="auto-complete" class="toggle-label"></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="settings-actions">
+            <button class="settings-save">Save Settings</button>
+          </div>
+        </div>
+
+        <!-- Offline Manager Screen -->
+        <div id="offline-manager" class="offline-manager">
+          <h2>Offline Content</h2>
+
+          <div class="offline-status">
+            <div class="status-indicator online">
+              <i class="fas fa-wifi"></i> Online - Content can be downloaded
+            </div>
+          </div>
+
+          <div class="download-categories">
+            <div class="download-category">
+              <div class="category-header">
+                <h3>HTML Basics</h3>
+                <div class="download-size">24 MB</div>
+              </div>
+              <div class="download-progress">
+                <div class="progress-bar">
+                  <div class="progress-filled" style="width: 100%"></div>
+                </div>
+                <div class="download-status">Downloaded</div>
+              </div>
+              <button class="remove-download">Remove</button>
+            </div>
+
+            <div class="download-category">
+              <div class="category-header">
+                <h3>CSS Styling</h3>
+                <div class="download-size">18 MB</div>
+              </div>
+              <div class="download-progress">
+                <div class="progress-bar">
+                  <div class="progress-filled" style="width: 60%"></div>
+                </div>
+                <div class="download-status">Downloading... 60%</div>
+              </div>
+              <button class="pause-download">Pause</button>
+            </div>
+
+            <div class="download-category">
+              <div class="category-header">
+                <h3>JavaScript</h3>
+                <div class="download-size">32 MB</div>
+              </div>
+              <div class="download-status">Not Downloaded</div>
+              <button class="start-download">Download</button>
+            </div>
+          </div>
+
+          <div class="offline-actions">
+            <button class="download-all">Download All</button>
+            <button class="remove-all">Remove All</button>
+          </div>
+        </div>
+      </main>
+
+      <nav>
+        <div class="nav-item active">
+          <div class="nav-icon"><i class="fas fa-home"></i></div>
+          <div class="nav-label">Home</div>
+        </div>
+        <div class="nav-item">
+          <div class="nav-icon"><i class="fas fa-book"></i></div>
+          <div class="nav-label">Learn</div>
+        </div>
+        <div class="nav-item">
+          <div class="nav-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="nav-label">Progress</div>
+        </div>
+        <div class="nav-item">
+          <div class="nav-icon"><i class="fas fa-user"></i></div>
+          <div class="nav-label">Profile</div>
+        </div>
+      </nav>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/editor.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/offline.js"></script>
+  </body>
+</html>

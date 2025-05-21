@@ -1,0 +1,126 @@
+/* Accessibility-specific styles */
+
+/* Font size variations */
+body.font-size-small {
+  font-size: 14px;
+}
+
+body.font-size-medium {
+  font-size: 16px;
+}
+
+body.font-size-large {
+  font-size: 18px;
+}
+
+body.font-size-extra-large {
+  font-size: 20px;
+}
+
+/* Touch targets for improved accessibility */
+.nav-item,
+.category,
+.exercise,
+button,
+.editor-tabs span,
+.filter,
+#toggle-instructions,
+.setting-item,
+.toggle-label {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus indicators */
+a:focus,
+button:focus,
+input:focus,
+[tabindex]:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Skip navigation for screen readers */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: white;
+  padding: 10px;
+  z-index: 100;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ARIA live regions */
+.aria-live {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Keyboard navigation indicators */
+.keyboard-mode *:focus {
+  outline: 3px solid var(--accent-color) !important;
+  outline-offset: 2px !important;
+}
+
+/* In high contrast mode, ensure sufficient contrast */
+.theme-high-contrast .primary-button {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.theme-high-contrast a {
+  color: #0057b7;
+  text-decoration: underline;
+}
+
+.theme-high-contrast .streak-counter,
+.theme-high-contrast .daily-challenge,
+.theme-high-contrast .run-button,
+.theme-high-contrast .next-button {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.theme-high-contrast .category,
+.theme-high-contrast .exercise,
+.theme-high-contrast .editor-container {
+  border: 2px solid #000;
+}
+
+.theme-high-contrast .feedback-item.positive .feedback-icon {
+  color: #006600;
+}
+
+.theme-high-contrast .nav-item.active .nav-icon,
+.theme-high-contrast .nav-item.active .nav-label {
+  color: #0057b7;
+}
